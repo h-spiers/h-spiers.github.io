@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Long Komi-san</title>
+    <link rel='shortcut icon' type='image/png' href='https://i.imgur.com/jNC02Xi.png'/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      body{
+        font-family: 'Open Sans';
+        margin-bottom: 0px;
+      }
+      a{
+        color: black;
+        text-decoration: none;
+        border-bottom: 1px solid;
+        transition: 0.2s;
+      }
+      a:hover{
+        color: black;
+      }
+      a:active{
+        color: #a6a6a6;
+      }
+      a:visited{
+        color: #a6a6a6;
+      }
+      #title-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #komi-title{
+        text-align: center;
+        font-size: 32px;
+      }
+      #credit-box{
+        align-self: flex-end;
+        position: absolute;
+        margin-top: 10px;
+        margin-left: -10px;
+      }
+      #komi-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 0px;
+      }
+      #begin-button{
+        border: none;
+        outline: none;
+        width: 100px;
+        height: 100px;
+        margin-top: 150px;
+        font-family: 'Open Sans';
+        border-radius: 50%;
+        box-shadow: -5 0 10px #d1d1d1;
+        transition: 0.3s;
+      }
+      #begin-button:hover{
+        cursor: pointer;
+        background-color: #a8a8a8;
+        box-shadow: 0 0 15px #d1d1d1;
+      }
+      #begin-button:active{
+        box-shadow: 0 0 0;
+      }
+      </style>
+  </head>
+  <body>
+    <div id=title-container>
+      <span id=komi-title>Long Komi-san</span>
+      <a id=credit-box href=https://github.com/h-spiers>Credits</a>
+    </div>
+    <div id=komi-container>
+      <img src='https://i.imgur.com/IpzYVjH.png'>
+      <input id=begin-button type=button value='E L O N G A T E'/>
+    </div>
+    <script>
+      //removes the button and adds the first komi torso
+      $('#begin-button').click(function(){
+        $('#begin-button').remove()
+        $('#komi-container').append(
+          $('<img>',{src:'https://i.imgur.com/uAAwvwk.png'}))
+      });
+      $(window).scroll(function() {
+        //adds a new komi torso when the user scrolls within 10px of the bottom of the doc
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
+          $('#komi-container').append(
+            $('<img>',{src:'https://i.imgur.com/uAAwvwk.png'}))
+        }
+      });
+    </script>
+  </body>
+</html>
